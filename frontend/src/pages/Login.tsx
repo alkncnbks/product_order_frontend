@@ -8,27 +8,27 @@ const Login: React.FC = () => {
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-        if (username === "admin" && password === "password") {
-            localStorage.setItem("token", "123456"); // Token kaydet
-            navigate("/dashboard"); // Dashboard'a yönlendir
+        if (username === "alkan" && password === "123456") {
+            localStorage.setItem("token", "123456");
+            navigate("/dashboard");
         } else {
-            alert("Hatalı kullanıcı adı veya şifre!");
+            alert("Invalid Username or Password!");
         }
     };
 
     return (
         <div>
-            <h1>Giriş Yap</h1>
+            <h1>Login</h1>
             <form onSubmit={handleLogin}>
                 <div>
-                    <label>Kullanıcı Adı:</label>
+                    <label>Username:</label>
                     <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
                 </div>
                 <div>
-                    <label>Şifre:</label>
+                    <label>Password:</label>
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <button type="submit">Giriş Yap</button>
+                <button type="submit">Login</button>
             </form>
         </div>
     );

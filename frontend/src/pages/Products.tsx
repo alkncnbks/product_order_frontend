@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {JSX, useEffect, useState} from "react";
 import axios from "axios";
 import { Table, Button } from "react-bootstrap";
 
@@ -6,9 +6,10 @@ interface Product {
     id: string;
     name: string;
     price: number;
+    description: string;
 }
 
-const Products = () => {
+const Products: () => JSX.Element = () => {
     const [products, setProducts] = useState<Product[]>([]);
 
     useEffect(() => {
@@ -26,7 +27,7 @@ const Products = () => {
                     <th>#</th>
                     <th>Name</th>
                     <th>Price</th>
-                    <th>Actions</th>
+                    <th>Description</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -35,6 +36,7 @@ const Products = () => {
                         <td>{index + 1}</td>
                         <td>{product.name}</td>
                         <td>${product.price}</td>
+                        <td>{product.description}</td>
                         <td>
                             <Button variant="warning" className="me-2">Edit</Button>
                             <Button variant="danger">Delete</Button>

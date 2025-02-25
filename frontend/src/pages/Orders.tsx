@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {JSX, useEffect, useState} from "react";
 import axios from "axios";
 
 interface Order {
@@ -7,7 +7,7 @@ interface Order {
     quantity: number;
 }
 
-const Orders = () => {
+const Orders: () => JSX.Element = () => {
     const [orders, setOrders] = useState<Order[]>([]);
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const Orders = () => {
             <ul>
                 {orders.map(order => (
                     <li key={order.id} className="border p-2">
-                        {order.product} - {order.quantity} adet
+                        {order.product} - {order.quantity}
                     </li>
                 ))}
             </ul>

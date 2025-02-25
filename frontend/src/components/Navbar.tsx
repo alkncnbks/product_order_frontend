@@ -7,7 +7,7 @@ const Navbar = () => {
             <Container>
                 <BootstrapNavbar.Brand>Admin Dashboard</BootstrapNavbar.Brand>
                 <Nav className="ms-auto">
-                    <Nav.Link as={Link} to="/login">Logout</Nav.Link>
+                    <Nav.Link as={Link} to="/login">Login</Nav.Link>
                 </Nav>
             </Container>
         </BootstrapNavbar>
